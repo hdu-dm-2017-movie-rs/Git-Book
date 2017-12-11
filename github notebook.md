@@ -45,11 +45,27 @@
     - 修改提交信息：$ git commit --amend
     - 压缩历史
   - #### 4.推送
-    - 添加远程仓库：
-    - 推送至远程仓库：
+    - 添加远程仓库：$ git remote add origin 远程仓库名
+    - 推送至远程仓库
+      - 推送至master分支：$ git push -u origin master
+      - 推送至其它分支：$ git push -u origin 分支仓库名
   - #### 5.获取
-  - 获取远程仓库：
+  - 获取远程仓库：$ git clone 远程仓库名
   - 获取最新远程仓库分支：
 
 ### GitHub网站
   - 快捷键：shift + /
+  - 个人信息：http://github.com/用户
+  - 仓库页面：http://github.com/用户/仓库
+    - watch/star/fork：追踪进度/标记/参与开发
+    - code：仓库文件列表
+    - issue：用于BUG报告，功能添加，方向性讨论
+    - pull requests：代码的更改和讨论
+    - wiki：记录共享信息或软件文档
+    - insights：可视化各项开发指标
+    - setting：设置
+    ---
+    - commits：当前分支提交历史
+    - branches：仓库分支
+    - releases：仓库标签
+    - contributors：贡献成员
