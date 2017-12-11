@@ -1,20 +1,55 @@
-- 初始化
-  - $ git config --global user.name " "
-  - $ git config --global user.email " "
-  - $ git config --global color.ui auto
+### Git安装
+  - Windows：使用[msysGit](http://msysgit.github.io/) | Mac & Linux 略
+  - 安装时选择`Checkout Windows-style…`，以CRLF换行
+  - 初始化：在`~/.gitconfig`文件中可查看
+    - $ git config --global user.name " "
+    - $ git config --global user.email " "
+    - $ git config --global color.ui auto
+  - 觉得命令行不熟练，Windows & Mac下可以用`Github Desktop`代替
 
-- 查看修改
-  - $ ~/.gitconfig
-  - $ git config --list
+### Github准备
+  - 创建账户，设置头像
+  - $\Delta$设置SSH Key：公开密钥认证需要，在`.ssh`下可查看私有密钥`id_rsa`和公有密钥`id_rsa.pub`
+    - $ ssh-keygen -t rsa -C "your email"
+    - 之后按回车，输入两次密码
+    - 之后会显示`key fingerprint：fingerprint值 + your email` 和 `randomart image：(一个很奇怪的图案)`
+    - 在Github中的`Account Setting`中找到`SSH & GPG keys`，点击`Add SSH Key`
+    - title中输入名字，key部分粘贴`id_rsa.pub`公钥里的内容(ssh_rsa 公钥内容 your email)
+    - 之后会收到邮件
+    - $ ssh -T git@github.com，将本地仓库连接Github
+  - 创建仓库`new repository`，只能创建public
+  - 克隆仓库`clone or download`，复制URL链接，$ git clone 你的URL链接
 
-- 初始化仓库
-  - $ mkdir 仓库名
-  - $ cd 仓库名
-  - $ git init
+### Git操作
+  - #### 1.基本操作
+    - 初始化仓库：生成`.git`目录
+      - $ mkdir 仓库名 
+      - $ cd 仓库名
+      - $ git init
+    - 查看仓库状态：$ git status
+    - 添加文件：$ git add，文件保存在暂存区
+    - 保存历史纪录：$ git commit -m "写一些提交的概述(commit)"，将暂存区文件实际保存到仓库的历史记录中
+      - 不加`-m`执行后可在#号后做详细的记录，第一行为概述，第二行空行，第三行为详细内容
+      - 之后可执行$ git status 查看提交后的状态
+    - 查看提交日志：$ git log，commit后显示的时哈希值，可用于找回误删的提交
+      - $ git log --pretty=short，简单显示 
+      - $ git log 文件名，显示指定文件日志
+      - $ git log -p，显示文件的改动
+    - 查看更改：$ git diff
+      - $ git diff HEAD，指向当前分支中最新一次提交的指针
+  - #### $\Delta$2.分支操作
+    - 
+  - #### 3.更改提交操作
+    - 回溯：$ git reset --hard 哈希值
+    - 消除冲突
+    - 修改提交信息：$ git commit --amend
+    - 压缩历史
+  - #### 4.推送
+    - 添加远程仓库：
+    - 推送至远程仓库：
+  - #### 5.获取
+  - 获取远程仓库：
+  - 获取最新远程仓库分支：
 
-- 查看仓库状态+添加文件
-  - $ git status
-  - $ touch 文件名
-  - $ git status    //文件显示在Untracked files
-  - $ git add 文件名
-  - $ git status
+### GitHub网站
+  - 快捷键：shift + /
